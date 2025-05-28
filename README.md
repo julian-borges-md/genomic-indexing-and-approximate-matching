@@ -1,9 +1,10 @@
-# genomic_indexing_and_approximate_matching
 # Bioinformatics Module 2: Preprocessing, Indexing, and Approximate Matching  
 **Specialization:** Genomic Data Science  
 **Course:** Algorithms for DNA Sequencing  
-**Institution:** Johns Hopkins University  
+**Institution:** Johns Hopkins University 
 **Author:** Julian Borges (for personal documentation study)
+
+# DNA Sequencing Algorithms – JHU Genomic Data Science Specialization
 
 This project continues the exploration of algorithms and data structures to address the fundamental problem in genomics: **read alignment**.
 So far, I’ve used naive exact matching — effective but slow, and incapable of finding approximate matches. In this module, I improve on both dimensions:
@@ -11,13 +12,16 @@ So far, I’ve used naive exact matching — effective but slow, and incapable o
 - **Speed** – via the Boyer-Moore algorithm and k-mer indexing  
 - **Flexibility** – via approximate pattern matching with the pigeonhole principle
 
-The techniques here underlie real-world tools for genome-scale alignment, where both performance and tolerance for mismatches are essential.
 
-# DNA Sequencing Algorithms – JHU Genomic Data Science Specialization
+Combining Bad Character and Good Suffix Rules in Boyer-Moore
+In practical applications of the Boyer-Moore algorithm, we don't rely on the bad character rule or the good suffix rule in isolation. Instead, we apply both rules simultaneously and take the maximum suggested shift from either. This approach ensures that we skip the largest number of alignments that are provably unnecessary, which significantly improves efficiency.
 
-**Author:** Julian Borges MD
-**Course:** Algorithms for DNA Sequencing - Module 2
-**Institution:** Johns Hopkins University  
+Rule Recap
+Bad Character Rule: When a mismatch occurs, shift the pattern so that the mismatched text character aligns with its last occurrence in the pattern (if it exists). If it doesn't occur in the pattern, the pattern is shifted past the mismatched character.
+
+Good Suffix Rule: When a mismatch follows a set of matched characters (a suffix), shift the pattern so that another occurrence of that suffix (or a compatible prefix) aligns in the pattern, or move the pattern completely past it if no match is found.
+
+In genomic data processing, where sequences can be millions or billions of bases long, the efficiency gain from Boyer-Moore is not just theoretical—it’s essential.
 
 ## What This Project Covers
 
