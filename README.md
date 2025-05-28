@@ -7,7 +7,7 @@
 # DNA Sequencing Algorithms – JHU Genomic Data Science Specialization
 
 This project continues the exploration of algorithms and data structures to address the fundamental problem in genomics: **read alignment**.
-So far, I’ve used naive exact matching — effective but slow, and incapable of finding approximate matches. In this module, I improve on both dimensions:
+So far, we’ve used naive exact matching — effective but slow, and incapable of finding approximate matches. In this module, we improve on both dimensions:
 
 - **Speed** – via the Boyer-Moore algorithm and k-mer indexing  
 - **Flexibility** – via approximate pattern matching with the pigeonhole principle
